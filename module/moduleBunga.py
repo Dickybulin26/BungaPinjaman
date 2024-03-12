@@ -1,7 +1,11 @@
 
 #* MODUL UNTUK BUNGA TUNGGAL
 
-def MencariModaln(modalAwal:int|float, bungaBulanan:int|float, jangka:int|float = 12):
+def MencariModaln(
+          modalAwal:int|float, 
+          bungaBulanan:int|float, 
+          jangka:int|float = 12,
+          tipe:str = "tunggal"):
     """
     Menghitung bunga tunggal
 
@@ -12,12 +16,18 @@ def MencariModaln(modalAwal:int|float, bungaBulanan:int|float, jangka:int|float 
             bungaBulanan (float|int): bunga bulanan (i)
                 Default Value = 12 (bulan | 1 tahun)
             jangka (float|int): jangka waktu (n)
-
+            tipe (str): tipe bunga (tunggal | majemuk)
+                Default Value = tunggal
         Returns: (float|int) -> Modal Ke-n (Mn)
     """
     
-    bungaBulanan = bungaBulanan / 100
-    modalN = modalAwal * ((1 + bungaBulanan) ** jangka)
+    bungaBulanan = bungaBulanan / 100 / 12
+
+    if tipe == "majemuk":
+        modalN = modalAwal * (1+ ((jangka * bungaBulanan)**2))
+    else:
+        modalN = modalAwal * (1+ (jangka * bungaBulanan))
+
     return f"Modal ke-{jangka} = {modalN}"
 
 def MencariModalAwal(modalN:int|float, bungaBulanan:int|float, jangka:int|float = 12):

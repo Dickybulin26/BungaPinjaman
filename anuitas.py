@@ -1,5 +1,5 @@
 
-from module import moduleBungaMajemuk as mbm
+from module import moduleAnuitas as ma
 
 soal = """
             ibu eli meminjam uang di bank BTN sebesar 300 juta rupiah. Bank BTN memberikan
@@ -18,6 +18,14 @@ diket = """
             A = (M * i * (1 + i)**n) / ((1 + i)**n - 1)
         """
 
-print(mbm.MencariAnuitas(modalAwal=250000000,bungaBulanan=7.2,jangka=120))
+print(ma.MencariAnuitas(modalAwal=250000000,bungaBulanan=7.2,jangka=120))
 
-print(mbm.MencariAnuitas(modalAwal=80000000,bungaBulanan=4.8,jangka=48))
+print(ma.MencariAnuitas(modalAwal=80000000,bungaBulanan=4.8,jangka=48))
+
+"""
+        Anuitas : A = an * Bn
+        A = (M * i * (1 + i)**n) / ((1 + i)**n - 1)
+
+"""
+
+print(ma.MencariAnuitas(modalAwal=10000000,bungaBulanan=1.5,jangka=10))

@@ -1,5 +1,4 @@
-
-from module import moduleBungaTunggal as mbt
+import module.moduleBunga as mb
 
 
 soal =  """
@@ -16,22 +15,28 @@ diket = """
             Mn = M0 * (1 + i)
         """
 
-print(mbt.MencariModaln(500000, 0.005))
+print(mb.MencariModaln(500000, 0.005))
 
-print(mbt.MencariModalAwal(35400000, 3, 72))
+print(mb.MencariModalAwal(35400000, 3, 72))
 
-print(mbt.MencariBunga(20000000,20960000,4))
+print(mb.MencariBunga(20000000,20960000,4))
 
-print(mbt.MencariJangka(
+print(mb.MencariJangka(
     modalAwal=25000000, 
     modalN=30000000, 
     bungaBulanan=2.5
     ))
 
-print(mbt.MencariJangka(
+print(mb.MencariJangka(
     modalAwal=25000000,
     modalN=30000000,
     bungaBulanan=2.5, 
     tipe="tahun"
     ))
 
+
+print(mb.MencariModalAwal(10000,10))
+
+print(mb.MencariModaln(modalAwal=20000000,bungaBulanan=5,jangka=60))
+
+print(mb.MencariModaln(modalAwal=75_000_000,bungaBulanan=5,jangka=168,tipe="majemuk"))
